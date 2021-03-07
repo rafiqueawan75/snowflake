@@ -1,0 +1,14 @@
+version: '3' 
+services:   
+  snowval: 
+    build: app
+    restart: always
+    ports: 
+      - '5000:5000'
+    networks:
+      - backnet
+secrets:
+  db-password:
+    file: db/password.txt
+networks:
+  backnet:   
